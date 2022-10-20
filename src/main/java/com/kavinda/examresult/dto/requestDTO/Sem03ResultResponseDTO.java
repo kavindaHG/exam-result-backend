@@ -3,7 +3,7 @@ package com.kavinda.examresult.dto.requestDTO;
 import lombok.Data;
 
 @Data
-public class Semester03ExamResultRequestDTO {
+public class Sem03ResultResponseDTO {
 
     private String operatingSystemsAndComputerSecurity;
     private String projectManagement;

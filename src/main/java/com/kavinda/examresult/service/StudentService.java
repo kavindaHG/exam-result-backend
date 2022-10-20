@@ -1,15 +1,21 @@
 package com.kavinda.examresult.service;
 
 import com.kavinda.examresult.dto.requestDTO.StudentRequestDTO;
-import com.kavinda.examresult.dto.responseDTO.StudentIndexAndNameResponseDTO;
+import com.kavinda.examresult.dto.responseDTO.StudentIndexAndName;
 import com.kavinda.examresult.dto.responseDTO.StudentResponseDTO;
 import com.kavinda.examresult.entity.Student;
 
+import java.util.List;
+
+
 public interface StudentService {
-
-    Student retrieveStudentDetailsByStudentId(Integer studentId);
-
     Student addNewStudent(StudentRequestDTO studentRequestDTO);
 
-    Student retrieveStudentIndexAndNameByStudentIndexNumber(String studentIndex);
+    List<StudentResponseDTO> getAllStudentDetails();
+
+    Student getStudentDetailsById(Integer studentId);
+
+    Student getStudentDetailsByIndex(String studentIndex);
+
+
 }

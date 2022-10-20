@@ -3,7 +3,7 @@ package com.kavinda.examresult.dto.requestDTO;
 import lombok.Data;
 
 @Data
-public class Semester02ExamResultRequestDTO {
+public class Sem02ResultResponseDTO {
 
     private String objectOrientedProgramming;
     private String graphicsAndMultimedia;

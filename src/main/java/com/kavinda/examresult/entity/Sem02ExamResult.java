@@ -1,6 +1,6 @@
 package com.kavinda.examresult.entity;
 
-import com.kavinda.examresult.dto.requestDTO.Semester02ExamResultRequestDTO;
+import com.kavinda.examresult.dto.requestDTO.Sem02ResultResponseDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Semester02ExamResult {
+public class Sem02ExamResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,8 @@ public class Semester02ExamResult {
     @OneToOne(cascade = CascadeType.ALL)
     private Student student;
 
-    public Semester02ExamResult(Semester02ExamResultRequestDTO semester02ExamResultRequestDTO, Student student){
+    // Map Semester02ExamResultRequestDTO with Semester02ExamResult Entity
+    public Sem02ExamResult(Sem02ResultResponseDTO semester02ExamResultRequestDTO, Student student){
         this.objectOrientedProgramming = semester02ExamResultRequestDTO.getObjectOrientedProgramming();
         this.graphicsAndMultimedia = semester02ExamResultRequestDTO.getGraphicsAndMultimedia();
         this.dataStructuresAndAlgorithms = semester02ExamResultRequestDTO.getDataStructuresAndAlgorithms();
