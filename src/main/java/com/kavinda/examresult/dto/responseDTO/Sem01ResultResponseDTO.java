@@ -1,10 +1,11 @@
-package com.kavinda.examresult.dto.requestDTO;
+package com.kavinda.examresult.dto.responseDTO;
 
 import lombok.Data;
 
 @Data
-public class Semester01ExamResultRequestDTO {
-
+public class Sem01ResultResponseDTO {
+    private String studentIndex;
+    private String studentName;
     private String personalComputerApplications;
     private String computerHardware;
     private String structuredProgramming;
@@ -13,5 +14,4 @@ public class Semester01ExamResultRequestDTO {
     private String webDevelopment;
     private String mathematicsForIT;
     private String englishForTechnologyI;
-    private Integer studentId;
 }

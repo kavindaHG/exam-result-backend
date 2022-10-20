@@ -1,9 +1,9 @@
 package com.kavinda.examresult.service;
 
-import com.kavinda.examresult.dto.requestDTO.Semester02ExamResultRequestDTO;
-import com.kavinda.examresult.entity.Semester02ExamResult;
+import com.kavinda.examresult.dto.requestDTO.Sem02ResultResponseDTO;
+import com.kavinda.examresult.entity.Sem02ExamResult;
 
 public interface Semester02Service {
 
-    Semester02ExamResult addNewSemester02ExamResultWithStudentId(Semester02ExamResultRequestDTO semester02ExamResultRequestDTO);
+    Sem02ExamResult newSemester02ExamResult(Sem02ResultResponseDTO semester02ExamResultRequestDTO);
 }

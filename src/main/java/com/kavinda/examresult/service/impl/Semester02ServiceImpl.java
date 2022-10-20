@@ -1,7 +1,7 @@
 package com.kavinda.examresult.service.impl;
 
-import com.kavinda.examresult.dto.requestDTO.Semester02ExamResultRequestDTO;
-import com.kavinda.examresult.entity.Semester02ExamResult;
+import com.kavinda.examresult.dto.requestDTO.Sem02ResultResponseDTO;
+import com.kavinda.examresult.entity.Sem02ExamResult;
 import com.kavinda.examresult.entity.Student;
 import com.kavinda.examresult.repository.Semester02Repository;
 import com.kavinda.examresult.service.Semester02Service;
@@ -19,10 +19,10 @@ public class Semester02ServiceImpl implements Semester02Service {
     private StudentService studentService;
 
     @Override
-    public Semester02ExamResult addNewSemester02ExamResultWithStudentId(Semester02ExamResultRequestDTO
+    public Sem02ExamResult newSemester02ExamResult(Sem02ResultResponseDTO
                                                                                     semester02ExamResultRequestDTO) {
-        Student studentId = studentService.retrieveStudentDetailsByStudentId(semester02ExamResultRequestDTO.getStudentId());
-        Semester02ExamResult semester02ExamResult = new Semester02ExamResult(semester02ExamResultRequestDTO, studentId);
-        return semester02Repository.save(semester02ExamResult);
+        Student studentId = studentService.getStudentDetailsById(semester02ExamResultRequestDTO.getStudentId());
+        Sem02ExamResult sem02ExamResult = new Sem02ExamResult(semester02ExamResultRequestDTO, studentId);
+        return semester02Repository.save(sem02ExamResult);
         }
 }

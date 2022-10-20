@@ -1,13 +1,13 @@
 package com.kavinda.examresult.service;
 
-import com.kavinda.examresult.dto.requestDTO.Semester01ExamResultRequestDTO;
-import com.kavinda.examresult.dto.responseDTO.Semester01ExamResultResponseDTO;
-import com.kavinda.examresult.entity.Semester01ExamResult;
+import com.kavinda.examresult.dto.requestDTO.Sem01ResultRequestDTO;
+import com.kavinda.examresult.dto.responseDTO.Sem01ResultResponseDTO;
+import com.kavinda.examresult.entity.Sem01ExamResult;
 
 import java.util.List;
 
 public interface Semester01Service {
-    Semester01ExamResult addNewSemester01ExamResultWithStudentId(Semester01ExamResultRequestDTO semester01ExamResultRequestDTO);
+    Sem01ExamResult newSemester01ExamResult(Sem01ResultRequestDTO sem01ResultRequestDTO);
 
-    List<Semester01ExamResultResponseDTO> retrieveAllSemester01ExamResultsWithStudentIndexAndName();
+    List<Sem01ResultResponseDTO> retrieveSemester01ExamResults();
 }

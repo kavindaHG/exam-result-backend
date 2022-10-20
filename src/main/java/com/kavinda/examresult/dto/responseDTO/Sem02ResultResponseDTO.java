@@ -1,4 +1,4 @@
 package com.kavinda.examresult.dto.responseDTO;
 
-public class Semester02ExamResultResponseDTO {
+public class Sem02ResultResponseDTO {
 }

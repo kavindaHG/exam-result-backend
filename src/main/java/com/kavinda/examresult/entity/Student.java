@@ -32,6 +32,7 @@ public class Student {
     @Column(unique = true)
     private String studentMobile;
 
+    // Map StudentRequestDTO with Student Entity
     public Student(StudentRequestDTO studentRequestDTO){
         this.studentIndex = studentRequestDTO.getStudentIndex();
         this.studentName = studentRequestDTO.getStudentName();

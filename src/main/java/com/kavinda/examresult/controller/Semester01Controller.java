@@ -1,9 +1,9 @@
 package com.kavinda.examresult.controller;
 
 import com.kavinda.examresult.common.ExamResultConstants;
-import com.kavinda.examresult.dto.requestDTO.Semester01ExamResultRequestDTO;
-import com.kavinda.examresult.dto.responseDTO.Semester01ExamResultResponseDTO;
-import com.kavinda.examresult.entity.Semester01ExamResult;
+import com.kavinda.examresult.dto.requestDTO.Sem01ResultRequestDTO;
+import com.kavinda.examresult.dto.responseDTO.Sem01ResultResponseDTO;
+import com.kavinda.examresult.entity.Sem01ExamResult;
 import com.kavinda.examresult.service.Semester01Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +17,16 @@ public class Semester01Controller {
     @Autowired
     private Semester01Service semester01Service;
 
-    @PostMapping("/")
-    public Semester01ExamResult addNewSemester01ExamResultWithStudentId(@RequestBody Semester01ExamResultRequestDTO
-                                                                                    semester01ExamResultRequestDTO){
-        return semester01Service.addNewSemester01ExamResultWithStudentId(semester01ExamResultRequestDTO);
+    //Add new semester 01 exam result using student ID
+    @PostMapping("/semester-01-result")
+    public Sem01ExamResult newSem01Result(@RequestBody Sem01ResultRequestDTO
+                                                  sem01ResultRequestDTO){
+        return semester01Service.newSemester01ExamResult(sem01ResultRequestDTO);
     }
 
-    @GetMapping("/")
-    public List<Semester01ExamResultResponseDTO> retrieveAllSemester01ExamResultsWithStudentIndexAndName(){
-        return semester01Service.retrieveAllSemester01ExamResultsWithStudentIndexAndName();
+    //retrieve semester 01 exam result by student index with student index and name
+    @GetMapping("/semester-01-result")
+    public List<Sem01ResultResponseDTO> getSem01AllResult(){
+        return semester01Service.retrieveSemester01ExamResults();
     }
 }
