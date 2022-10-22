@@ -1,6 +1,6 @@
 package com.kavinda.examresult.entity;
 
-import com.kavinda.examresult.dto.requestDTO.Sem03ResultResponseDTO;
+import com.kavinda.examresult.dto.requestDTO.Sem03ResultRequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,15 +30,15 @@ public class Sem03ExamResult {
     private Student student;
 
     // Map Semester03ExamResultRequestDTO with Semester03ExamResult Entity
-    public Sem03ExamResult(Sem03ResultResponseDTO sem03ResultResponseDTO, Student student){
-        this.operatingSystemsAndComputerSecurity = sem03ResultResponseDTO.getOperatingSystemsAndComputerSecurity();
-        this.projectManagement = sem03ResultResponseDTO.getProjectManagement();
-        this.economicsForIT = sem03ResultResponseDTO.getEconomicsForIT();
-        this.rapidApplicationDevelopment = sem03ResultResponseDTO.getRapidApplicationDevelopment();
-        this.principlesOfSoftwareEngineering = sem03ResultResponseDTO.getPrinciplesOfSoftwareEngineering();
-        this.objectOrientedAnalysisAndDesign = sem03ResultResponseDTO.getObjectOrientedAnalysisAndDesign();
-        this.englishForTechnologyIII = sem03ResultResponseDTO.getEnglishForTechnologyIII();
-        this.groupProject = sem03ResultResponseDTO.getGroupProject();
+    public Sem03ExamResult(Sem03ResultRequestDTO sem03ResultRequestDTO, Student student){
+        this.operatingSystemsAndComputerSecurity = sem03ResultRequestDTO.getOperatingSystemsAndComputerSecurity();
+        this.projectManagement = sem03ResultRequestDTO.getProjectManagement();
+        this.economicsForIT = sem03ResultRequestDTO.getEconomicsForIT();
+        this.rapidApplicationDevelopment = sem03ResultRequestDTO.getRapidApplicationDevelopment();
+        this.principlesOfSoftwareEngineering = sem03ResultRequestDTO.getPrinciplesOfSoftwareEngineering();
+        this.objectOrientedAnalysisAndDesign = sem03ResultRequestDTO.getObjectOrientedAnalysisAndDesign();
+        this.englishForTechnologyIII = sem03ResultRequestDTO.getEnglishForTechnologyIII();
+        this.groupProject = sem03ResultRequestDTO.getGroupProject();
         this.student = student;
     }
 }

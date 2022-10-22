@@ -1,7 +1,6 @@
 package com.kavinda.examresult.service;
 
 import com.kavinda.examresult.dto.requestDTO.StudentRequestDTO;
-import com.kavinda.examresult.dto.responseDTO.StudentIndexAndName;
 import com.kavinda.examresult.dto.responseDTO.StudentResponseDTO;
 import com.kavinda.examresult.entity.Student;
 
@@ -16,6 +15,4 @@ public interface StudentService {
     Student getStudentDetailsById(Integer studentId);
 
     Student getStudentDetailsByIndex(String studentIndex);
-
-
 }

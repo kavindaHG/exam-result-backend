@@ -9,5 +9,7 @@ import java.util.List;
 public interface Semester01Service {
     Sem01ExamResult newSemester01ExamResult(Sem01ResultRequestDTO sem01ResultRequestDTO);
 
-    List<Sem01ResultResponseDTO> retrieveSemester01ExamResults();
+    List<Sem01ResultResponseDTO> retrieveSem01AllResult();
+
+    List<Sem01ResultResponseDTO> retrieveSem01ResultByIndex(String studentIndex);
 }

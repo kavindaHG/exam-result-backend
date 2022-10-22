@@ -3,7 +3,7 @@ package com.kavinda.examresult.dto.requestDTO;
 import lombok.Data;
 
 @Data
-public class Sem02ResultResponseDTO {
+public class Sem02ResultRequestDTO {
 
     private String objectOrientedProgramming;
     private String graphicsAndMultimedia;
@@ -14,4 +14,5 @@ public class Sem02ResultResponseDTO {
     private String englishForTechnologyII;
     private String humanValuesAndProfessionalEthics;
     private Integer studentId;
+    private String studentIndex;
 }

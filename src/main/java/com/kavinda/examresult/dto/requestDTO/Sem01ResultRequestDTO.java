@@ -14,4 +14,5 @@ public class Sem01ResultRequestDTO {
     private String mathematicsForIT;
     private String englishForTechnologyI;
     private Integer studentId;
+    private String studentIndex;
 }

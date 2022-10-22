@@ -1,7 +1,6 @@
 package com.kavinda.examresult.service.impl;
 
 import com.kavinda.examresult.dto.requestDTO.StudentRequestDTO;
-import com.kavinda.examresult.dto.responseDTO.StudentIndexAndName;
 import com.kavinda.examresult.dto.responseDTO.StudentResponseDTO;
 import com.kavinda.examresult.entity.Student;
 import com.kavinda.examresult.repository.StudentRepository;
@@ -9,6 +8,7 @@ import com.kavinda.examresult.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.FileSystemNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,25 +18,45 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    // Add new Student
     @Override
     public Student addNewStudent(StudentRequestDTO studentRequestDTO) {
-        Student student = new Student(studentRequestDTO);
-        return studentRepository.save(student);
+        try {
+            Student student = new Student(studentRequestDTO);
+            return studentRepository.save(student);
+        }catch (InternalError internalError){
+            return null;
+        }
     }
 
+    // Retrieve all student details
     @Override
     public List<StudentResponseDTO> getAllStudentDetails() {
-        return studentRepository.findAll().stream().map(this::mapStudentResponseDTO).collect(Collectors.toList());
+        try {
+            return studentRepository.findAll().stream().map(this::mapStudentResponseDTO).collect(Collectors.toList());
+        }catch (FileSystemNotFoundException fileSystemNotFoundException){
+            return null;
+        }
     }
 
+    // Retrieve student details by student id
     @Override
     public Student getStudentDetailsById(Integer studentId) {
-        return studentRepository.findById(studentId).get();
+        try {
+            return studentRepository.findById(studentId).get();
+        }catch (FileSystemNotFoundException fileSystemNotFoundException){
+            return null;
+        }
     }
 
+    // Retrieve student details by student index number
     @Override
     public Student getStudentDetailsByIndex(String studentIndex){
-        return studentRepository.findAllByStudentIndex(studentIndex);
+        try {
+            return studentRepository.findAllByStudentIndex(studentIndex);
+        }catch (FileSystemNotFoundException fileSystemNotFoundException){
+            return null;
+        }
     }
 
     //Map StudentResponseDTO With Student Entity
