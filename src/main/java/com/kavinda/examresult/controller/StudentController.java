@@ -17,26 +17,26 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    //add new student details
-    @PostMapping("/student")
+    // Add new student details
+    @PostMapping("/new-student")
     public Student addNewStudent(@RequestBody StudentRequestDTO studentRequestDTO){
         return studentService.addNewStudent(studentRequestDTO);
     }
 
-    //get all student details
-    @GetMapping("/student")
+    // Retrieve all student details
+    @GetMapping("/all-students")
     public List<StudentResponseDTO> getAllStudentDetails (){
         return studentService.getAllStudentDetails();
     }
 
-    //retrieve student details by student ID
-    @GetMapping("student-by-id/{id}")
+    // Retrieve student details by student ID
+    @GetMapping("/:id/{id}")
     public Student getStudentById(@PathVariable ("id") Integer studentId){
         return studentService.getStudentDetailsById(studentId);
     }
 
-    //retrieve student details by student Index
-    @GetMapping("student-by-index/{index}")
+    // Retrieve student details by student Index
+    @GetMapping("/:index/{index}")
     public Student getStudentByIndex(@PathVariable ("index") String studentIndex){
         return studentService.getStudentDetailsByIndex(studentIndex);
     }

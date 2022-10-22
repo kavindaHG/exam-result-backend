@@ -1,6 +1,6 @@
 package com.kavinda.examresult.entity;
 
-import com.kavinda.examresult.dto.requestDTO.Sem04ResultResponseDTO;
+import com.kavinda.examresult.dto.requestDTO.Sem04ResultRequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,15 +30,15 @@ public class Sem04ExamResult {
     private Student student;
 
     // Map Semester04ExamResultRequestDTO with Semester04ExamResult Entity
-    public Sem04ExamResult(Sem04ResultResponseDTO sem04ResultResponseDTO, Student student){
-        this.computerArchitecture = sem04ResultResponseDTO.getComputerArchitecture();
-        this.enterpriseArchitecture = sem04ResultResponseDTO.getEnterpriseArchitecture();
-        this.freeAndOpenSourceSoftware = sem04ResultResponseDTO.getFreeAndOpenSourceSoftware();
-        this.mobileApplicationDevelopment = sem04ResultResponseDTO.getMobileApplicationDevelopment();
-        this.professionalIssuesInIT = sem04ResultResponseDTO.getProfessionalIssuesInIT();
-        this.webApplicationDevelopment = sem04ResultResponseDTO.getWebApplicationDevelopment();
-        this.englishForTechnologyIV = sem04ResultResponseDTO.getEnglishForTechnologyIV();
-        this.individualProject = sem04ResultResponseDTO.getIndividualProject();
+    public Sem04ExamResult(Sem04ResultRequestDTO sem04ResultRequestDTO, Student student){
+        this.computerArchitecture = sem04ResultRequestDTO.getComputerArchitecture();
+        this.enterpriseArchitecture = sem04ResultRequestDTO.getEnterpriseArchitecture();
+        this.freeAndOpenSourceSoftware = sem04ResultRequestDTO.getFreeAndOpenSourceSoftware();
+        this.mobileApplicationDevelopment = sem04ResultRequestDTO.getMobileApplicationDevelopment();
+        this.professionalIssuesInIT = sem04ResultRequestDTO.getProfessionalIssuesInIT();
+        this.webApplicationDevelopment = sem04ResultRequestDTO.getWebApplicationDevelopment();
+        this.englishForTechnologyIV = sem04ResultRequestDTO.getEnglishForTechnologyIV();
+        this.individualProject = sem04ResultRequestDTO.getIndividualProject();
         this.student = student;
     }
 }

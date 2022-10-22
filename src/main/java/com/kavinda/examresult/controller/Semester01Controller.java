@@ -17,16 +17,23 @@ public class Semester01Controller {
     @Autowired
     private Semester01Service semester01Service;
 
-    //Add new semester 01 exam result using student ID
-    @PostMapping("/semester-01-result")
+    // Add new semester 01 exam result using student Index Number
+    @PostMapping("/new-result")
     public Sem01ExamResult newSem01Result(@RequestBody Sem01ResultRequestDTO
                                                   sem01ResultRequestDTO){
         return semester01Service.newSemester01ExamResult(sem01ResultRequestDTO);
     }
 
-    //retrieve semester 01 exam result by student index with student index and name
-    @GetMapping("/semester-01-result")
-    public List<Sem01ResultResponseDTO> getSem01AllResult(){
-        return semester01Service.retrieveSemester01ExamResults();
+    // Retrieve All semester 01 exam result by student index with student index and name
+    @GetMapping("/all-student-result")
+    public List<Sem01ResultResponseDTO> retrieveSem01AllResult(){
+        return semester01Service.retrieveSem01AllResult();
     }
+
+    // Retrieve all semester 01 exam result with student Index and student name by student index
+    @GetMapping("/result-by-index/{index}")
+    public List<Sem01ResultResponseDTO> retrieveSem01ResultByIndex(@PathVariable ("index") String studentIndex){
+        return semester01Service.retrieveSem01ResultByIndex(studentIndex);
+    }
+
 }

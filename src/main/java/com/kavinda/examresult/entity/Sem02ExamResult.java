@@ -1,6 +1,6 @@
 package com.kavinda.examresult.entity;
 
-import com.kavinda.examresult.dto.requestDTO.Sem02ResultResponseDTO;
+import com.kavinda.examresult.dto.requestDTO.Sem02ResultRequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +30,7 @@ public class Sem02ExamResult {
     private Student student;
 
     // Map Semester02ExamResultRequestDTO with Semester02ExamResult Entity
-    public Sem02ExamResult(Sem02ResultResponseDTO semester02ExamResultRequestDTO, Student student){
+    public Sem02ExamResult(Sem02ResultRequestDTO semester02ExamResultRequestDTO, Student student){
         this.objectOrientedProgramming = semester02ExamResultRequestDTO.getObjectOrientedProgramming();
         this.graphicsAndMultimedia = semester02ExamResultRequestDTO.getGraphicsAndMultimedia();
         this.dataStructuresAndAlgorithms = semester02ExamResultRequestDTO.getDataStructuresAndAlgorithms();
