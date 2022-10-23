@@ -18,13 +18,13 @@ public class StudentController {
     private StudentService studentService;
 
     // Add new student details
-    @PostMapping("/new-student")
+    @PostMapping("/new")
     public Student addNewStudent(@RequestBody StudentRequestDTO studentRequestDTO){
         return studentService.addNewStudent(studentRequestDTO);
     }
 
     // Retrieve all student details
-    @GetMapping("/all-students")
+    @GetMapping("/all")
     public List<StudentResponseDTO> getAllStudentDetails (){
         return studentService.getAllStudentDetails();
     }

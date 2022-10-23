@@ -18,19 +18,19 @@ public class Semester02Controller {
     private Semester02Service semester02Service;
 
     // Add new semester 01 exam result using student Index Number
-    @PostMapping("/new-result")
+    @PostMapping("/new")
     public Sem02ExamResult newSem02Result(@RequestBody Sem02ResultRequestDTO sem02ResultRequestDTO){
         return semester02Service.newSemester02ExamResult(sem02ResultRequestDTO);
     }
 
     // Retrieve All semester 01 exam result by student index with student index and name
-    @GetMapping("/all-student-result")
+    @GetMapping("/all")
     public List<Sem02ResultResponseDTO> retrieveSem02AllResult(){
         return semester02Service.retrieveSem02AllResult();
     }
 
     // Retrieve semester 01 exam result and student details by student index number
-    @GetMapping("/result-by-index/{index}")
+    @GetMapping("/:index/{index}")
     public List<Sem02ResultResponseDTO> retrieveSem02ResultByIndex(@PathVariable ("index") String studentIndex){
         return semester02Service.retrieveSem02ResultByIndex(studentIndex);
     }
